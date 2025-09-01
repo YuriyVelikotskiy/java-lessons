@@ -1,2 +1,2 @@
-# aston-course
-Course tasks
+# Java tasks
+## Task 1
