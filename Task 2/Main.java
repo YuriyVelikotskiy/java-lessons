@@ -8,8 +8,12 @@ public class Main {
         String path = "source\\testFile.txt";
         MyFileIOExample file = new MyFileIOExample(path);
 
-        file.writeToFile(inPutExample);
-        System.out.println(file.readFromFile());
+        try {
+            file.writeToFile(inPutExample);
+            System.out.println(file.readFromFile());
+        } catch (MyExceptionExample e){
+            System.out.println(e.getMessage());
+        }
     }
     public static class MyExceptionExample extends RuntimeException{
         public MyExceptionExample(Throwable exception, String massage){
