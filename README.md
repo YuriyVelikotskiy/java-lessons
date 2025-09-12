@@ -4,6 +4,6 @@
 ## Task 2 IO и Exceptions
 [Условия](https://github.com/YuriyVelikotskiy/java-lessons/blob/main/Task%202/README.md) - [Решение](https://github.com/YuriyVelikotskiy/java-lessons/tree/main/Task%202)
 ## Task 3
---
+[Условия](https://github.com/YuriyVelikotskiy/java-lessons/blob/main/Task%203/README.md) - [Решение](https://github.com/YuriyVelikotskiy/java-lessons/tree/main/Task%203)
 ## Task 4
 --
