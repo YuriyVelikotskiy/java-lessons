@@ -1,5 +1,3 @@
-import dataStructures.MyArrayList;
-import dataStructures.MyHashSet;
 import models.Book;
 import models.Student;
 
@@ -7,7 +5,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class Main {
+public class StreamExample {
     public static void main(String[] args) {
 
         List<Student> students = Arrays.asList(

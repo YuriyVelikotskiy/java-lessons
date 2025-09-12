@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.util.List;
 
-public class Main {
+public class IOExample {
     public static void main(String[] args) {
         String inPutExample = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
         String path = "source\\testFile.txt";
