@@ -1,8 +1,8 @@
 # Task 3
 Реализовать паттерны: 
-- [Стратегия](https://github.com/YuriyVelikotskiy/java-lessons/blob/main/Task%203/StrategyExample.java)
+- Стратегия
 - Цепочка обязанностей
-- Билдер
+- [Билдер](https://github.com/YuriyVelikotskiy/java-lessons/blob/main/Task%203/StrategyExample.java)
 - Прокси
 - Декоратор
 - Адаптер
