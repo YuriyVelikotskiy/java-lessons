@@ -1,40 +1,42 @@
 public class StrategyExample {
-    public static class Document{
+    public static class Document {
 
     }
-    public interface PrintingStrategy{
+
+    public interface PrintingStrategy {
         void printing(Document document);
     }
 
-    public static class ColorPrintingStrategy implements PrintingStrategy{
+    public static class ColorPrintingStrategy implements PrintingStrategy {
         @Override
         public void printing(Document document) {
             System.out.println("Color printing!!!");
         }
     }
 
-    public static class InvertedColorPrintingStrategy implements PrintingStrategy{
+    public static class InvertedColorPrintingStrategy implements PrintingStrategy {
         @Override
         public void printing(Document document) {
             System.out.println("Inverted printing!!!");
         }
     }
 
-    public static class MonochromeColorPrintingStrategy implements PrintingStrategy{
+    public static class MonochromeColorPrintingStrategy implements PrintingStrategy {
         @Override
         public void printing(Document document) {
             System.out.println("Monochrome printing!!!");
         }
     }
 
-    public static class Printer{
+    public static class Printer {
         private PrintingStrategy strategy;
 
-        public Printer setStrategy(PrintingStrategy strategy){
+        public Printer setStrategy(PrintingStrategy strategy) {
             this.strategy = strategy;
             return this;
         }
-        public void print(Document document){
+
+        public void print(Document document) {
             this.strategy.printing(document);
         }
     }

@@ -1,6 +1,6 @@
 public class BuilderExample {
 
-    public static class Car{
+    public static class Car {
         private final String chassis;
         private final String engine;
         private final String body;
@@ -27,21 +27,27 @@ public class BuilderExample {
         }
     }
 
-    public interface CarBuilder{
+    public interface CarBuilder {
         CarBuilder buildChassis();
+
         CarBuilder buildEngine();
+
         CarBuilder buildBody();
+
         CarBuilder buildInterior();
+
         CarBuilder buildExterior();
+
         Car build();
     }
 
-    public static class PorscheCarBuilder implements CarBuilder{
+    public static class PorscheCarBuilder implements CarBuilder {
         private String chassis;
         private String engine;
         private String body;
         private String interior;
         private String exterior;
+
         @Override
         public CarBuilder buildChassis() {
             System.out.println("Assembling the chassis for Porsche!!!");
@@ -79,22 +85,24 @@ public class BuilderExample {
 
         @Override
         public Car build() {
-            Car car = new Car(chassis, engine, body, interior,exterior);
+            Car car = new Car(chassis, engine, body, interior, exterior);
             System.out.println("The Porsche assembly is finished!!!");
             return car;
         }
     }
 
-    public static class BuildDirector{
+    public static class BuildDirector {
         private final CarBuilder builder;
 
-        public BuildDirector(CarBuilder builder){
+        public BuildDirector(CarBuilder builder) {
             this.builder = builder;
         }
-        public Car carAssembly(){
+
+        public Car carAssembly() {
             return builder.buildChassis().buildEngine().buildBody().buildInterior().buildExterior().build();
         }
     }
+
     public static void main(String[] args) {
         CarBuilder carBuilder = new PorscheCarBuilder();
         BuildDirector buildDirector = new BuildDirector(carBuilder);
