@@ -1,4 +1,4 @@
-public class StrategyExample {
+public class BuilderExample {
 
     public static class Car{
         private final String chassis;
