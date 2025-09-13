@@ -1,6 +1,6 @@
 # Task 3
 Реализовать паттерны: 
-- Стратегия
+- [Стратегия](https://github.com/YuriyVelikotskiy/java-lessons/blob/main/Task%203/StrategyExample.java)
 - Цепочка обязанностей
 - Билдер
 - Прокси
