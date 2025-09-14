@@ -28,13 +28,26 @@ public class ChainOfResponsibilityExample {
     }
 
     public abstract static class AuthenticationProcessor {
-        public AuthenticationProcessor nextProcessor;
+        private AuthenticationProcessor nextProcessor;
 
         public AuthenticationProcessor(AuthenticationProcessor next) {
             this.nextProcessor = next;
         }
 
-        public abstract boolean isAuthorized(AuthenticationProvider provider);
+        public boolean isAuthorized(AuthenticationProvider provider) {
+            if (isValidated(provider)) {
+                System.out.println(getMassage());
+                return true;
+            } else if (nextProcessor != null) {
+                return nextProcessor.isAuthorized(provider);
+            }
+            System.out.println("Authentication failed");
+            return false;
+        }
+
+        public abstract boolean isValidated(AuthenticationProvider provider);
+
+        public abstract String getMassage();
     }
 
     public static class TokenAuthenticationProcessor extends AuthenticationProcessor {
@@ -44,15 +57,13 @@ public class ChainOfResponsibilityExample {
         }
 
         @Override
-        public boolean isAuthorized(AuthenticationProvider provider) {
-            if (provider.getToken().equals("token")) {
-                System.out.println("Authentication completed (Token)");
-                return true;
-            } else if (nextProcessor != null) {
-                return nextProcessor.isAuthorized(provider);
-            }
-            System.out.println("Authentication failed");
-            return false;
+        public boolean isValidated(AuthenticationProvider provider) {
+            return provider.getToken().equals("token");
+        }
+
+        @Override
+        public String getMassage() {
+            return "Authentication completed (Token)";
         }
     }
 
@@ -63,15 +74,13 @@ public class ChainOfResponsibilityExample {
         }
 
         @Override
-        public boolean isAuthorized(AuthenticationProvider provider) {
-            if (provider.getPassword().equals("password") && provider.getUsername().equals("username")) {
-                System.out.println("Authentication completed (Username/Password)");
-                return true;
-            } else if (nextProcessor != null) {
-                return nextProcessor.isAuthorized(provider);
-            }
-            System.out.println("Authentication failed");
-            return false;
+        public boolean isValidated(AuthenticationProvider provider) {
+            return provider.getPassword().equals("password") && provider.getUsername().equals("username");
+        }
+
+        @Override
+        public String getMassage() {
+            return "Authentication completed (Username/Password)";
         }
     }
 
