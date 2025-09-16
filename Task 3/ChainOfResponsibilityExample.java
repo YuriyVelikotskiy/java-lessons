@@ -1,6 +1,5 @@
 public class ChainOfResponsibilityExample {
 
-
     public static class AuthenticationProvider {
         protected String token;
         protected String username;
@@ -96,4 +95,3 @@ public class ChainOfResponsibilityExample {
     }
 
 }
-

@@ -41,8 +41,8 @@ public class MyArrayList {
         } else {
             for (int j = i; j < size; j++) {
                 arr[j] = arr[j + 1];
-                size--;
             }
+            size--;
             return true;
         }
     }

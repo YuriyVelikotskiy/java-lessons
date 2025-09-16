@@ -56,7 +56,7 @@ public class MyHashSet {
         }
     }
 
-    public void remove(int value) {
+    public void remove(Object value) {
         int index = getIndex(value);
         Node head = nodes[index];
         Node pre = null;
