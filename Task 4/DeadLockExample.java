@@ -17,18 +17,20 @@ public class DeadLockExample {
             System.out.println(name);
             if (lock1.tryLock()) {
                 System.out.println("First locked!!!");
-                Thread.sleep(10);
+                Thread.sleep(20);
                 System.out.println("Try locked Second lock!!!");
                 lock2.lock();
                 System.out.println("Second locked!!!");
             } else {
                 lock2.lock();
                 System.out.println("Second locked!!!");
-                Thread.sleep(50);
+                Thread.sleep(20);
                 System.out.println("Try locked First lock!!!");
                 lock1.lock();
                 System.out.println("First locked!!!");
             }
+            lock1.unlock();
+            lock2.unlock();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
