@@ -6,4 +6,4 @@
 ## Task 3
 [Условия](https://github.com/YuriyVelikotskiy/java-lessons/blob/main/Task%203/README.md) - [Решение](https://github.com/YuriyVelikotskiy/java-lessons/tree/main/Task%203)
 ## Task 4
---
+[Условия](https://github.com/YuriyVelikotskiy/java-lessons/blob/main/Task%204/README.md) - [Решение](https://github.com/YuriyVelikotskiy/java-lessons/tree/main/Task%204)
